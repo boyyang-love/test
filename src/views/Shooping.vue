@@ -15,7 +15,7 @@
     {
       content: '删除',
       style: { background: 'red', color: '#fff',lineHeight:'190px' ,textAlign:'center'
-      ,fontSize: '28px', padding: '10px', width: '149px', },
+      ,fontSize: '28px', padding: '10px', width: '149px' },
       handler() {del(i)}
     }
   ]"
@@ -192,9 +192,9 @@ export default {
   width: 100%;
   height: 190px;
   background-color: #fff;
-  margin-top: 30px;
+  margin-bottom: 1px;
   display: flex;
-  overflow-x: hidden;
+  border-bottom: 1px solid #e0e0e0;
 }
 .wrapper {
   width: 750px;
@@ -202,7 +202,6 @@ export default {
   height: 190px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #999999;
 }
 .selectd {
   flex: 1;
@@ -273,6 +272,7 @@ export default {
   color: white;
   font-size: 38px;
   align-items: center;
+  margin-bottom: 30px;
 }
 .reback {
   margin-left: 20px;

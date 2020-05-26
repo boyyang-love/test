@@ -1,15 +1,18 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import GoodsSizeRouter from "./GoodsSizelRouter";
+import GoodsDetailRouter from "./GoodsDetailRouter";
 Vue.use(VueRouter);
 
 const routes = [
- {
-   path : '/',
-   name : 'Shooping',
-   component : ()=> import("@/views/Shooping")
- }
-  
+  GoodsSizeRouter,
+  GoodsDetailRouter,
+  {
+    path: "/shooping",
+    name: "Shooping",
+    component: () => import("@/views/Shooping")
+  }
 ];
 
 const router = new VueRouter({

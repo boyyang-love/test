@@ -1,7 +1,7 @@
 <template>
   <div id="shopping">
     <div class="head">
-      <div class="reback">
+      <div class="reback" @click="$router.back(-1)">
         <i class="iconfont icon-jiantouarrowhead7"></i> 返回
       </div>
       <div class="title">购物车</div>
@@ -9,16 +9,30 @@
         <i class="iconfont icon-more"></i>
       </div>
     </div>
-    <div class="commodity" v-for="(item, i) in list" :key="i" v-show="item.isShow">
+    <div
+      class="commodity"
+      v-for="(item, i) in list"
+      :key="i"
+      v-show="item.isShow"
+    >
       <mt-cell-swipe
         :right="[
-    {
-      content: '删除',
-      style: { background: 'red', color: '#fff',lineHeight:'190px' ,textAlign:'center'
-      ,fontSize: '28px', padding: '10px', width: '149px' },
-      handler() {del(i)}
-    }
-  ]"
+          {
+            content: '删除',
+            style: {
+              background: 'red',
+              color: '#fff',
+              lineHeight: '190px',
+              textAlign: 'center',
+              fontSize: '28px',
+              padding: '10px',
+              width: '149px'
+            },
+            handler() {
+              del(i);
+            }
+          }
+        ]"
       >
         <div class="wrapper">
           <div class="selectd">
@@ -31,21 +45,21 @@
           </div>
           <div class="desc">
             <div class="name">
-              <p style="fontSize:32px">{{item.desc}}</p>
+              <p style="fontSize:32px">{{ item.desc }}</p>
             </div>
             <div class="price" style="fontSize:32px; color: #ff3300">
               <span>
                 <span style="fontSize:22px">￥</span>
-                {{item.price | setPoint}}
-                <span
-                  style="fontSize:22px"
-                >.{{item.price | point}}</span>
+                {{ item.price | setPoint }}
+                <span style="fontSize:22px">.{{ item.price | point }}</span>
               </span>
             </div>
-            <div class="mes" style="fontSize:22px; color: #999999">规格：16枝 丨 颜色：红色</div>
+            <div class="mes" style="fontSize:22px; color: #999999">
+              规格：16枝 丨 颜色：红色
+            </div>
           </div>
           <div class="num">
-            <div class="number">{{item.number}}</div>
+            <div class="number">{{ item.number }}</div>
           </div>
           <!-- <div class="del">删除</div> -->
         </div>
@@ -56,9 +70,11 @@
       <div class="all-price">
         <div>
           <span style="fontSize:22px">￥</span>
-          <span style="fontSize:32px">{{allprice | setPoint}}</span>
-          <span style="fontSize:22px">.{{allprice | point}}</span>
-          <span style="fontSize:24px; color:#999999; marginLeft:20px">|不含配送费</span>
+          <span style="fontSize:32px">{{ allprice | setPoint }}</span>
+          <span style="fontSize:22px">.{{ allprice | point }}</span>
+          <span style="fontSize:24px; color:#999999; marginLeft:20px"
+            >|不含配送费</span
+          >
         </div>
       </div>
       <div class="pay">
